@@ -40,5 +40,13 @@ with open("practice.txt","r") as f:
 #to remove any textfile from our system we can use the os module and its remove() method.
 import os
 os.remove ("practice.txt")
+
+
+#For replacing some old data from file to new data
+with open ("Pract.txt","r") as f:
+    data = f.read()
+
+    new_data = data.replace("Old data","New data")
+    print(new_data)
         
 
