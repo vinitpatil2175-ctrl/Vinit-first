@@ -36,3 +36,9 @@ with open("practice.txt","r") as f:
     else:
         print("Not Found")
 
+
+#to remove any textfile from our system we can use the os module and its remove() method.
+import os
+os.remove ("practice.txt")
+        
+
