@@ -48,5 +48,6 @@ with open ("Pract.txt","r") as f:
 
     new_data = data.replace("Old data","New data")
     print(new_data)
-        
+with open ("Pract.txt","w") as f:
+     f.write(new_data)
 
