@@ -14,6 +14,7 @@ def sum(n):
     
 print(sum(5)) 
 
+
 #recusive function to print all ele of list
 def print_list(list,idx=0):
   if(idx>=len(list)):
@@ -25,4 +26,13 @@ fruits = ["apple","orange"]
 print_list(fruits)
 
 
+#recursive function to find a world in any of our textfiles
+word = "learning"
+with open("practice.txt","r") as f:
+    data = f.read()
+
+    if (data.find(word) != -1):
+        print("Found")
+    else:
+        print("Not Found")
 
