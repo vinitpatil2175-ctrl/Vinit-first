@@ -3,9 +3,8 @@ My Firsty Repository
 Author - Vinit Patil
 
 
-
-
 #For finding sum of first n natural no.s with recursion and def fun
+
 def sum(n):
   if (n>=10 or n<=0):
     return 0
@@ -16,6 +15,7 @@ print(sum(5))
 
 
 #recusive function to print all ele of list
+
 def print_list(list,idx=0):
   if(idx>=len(list)):
     return
@@ -27,6 +27,7 @@ print_list(fruits)
 
 
 #recursive function to find a world in any of our textfiles
+
 word = "learning"
 with open("practice.txt","r") as f:
     data = f.read()
@@ -38,6 +39,7 @@ with open("practice.txt","r") as f:
 
 
 #to remove any textfile from our system we can use the os module and its remove() method.
+
 import os
 os.remove ("practice.txt")
 
@@ -50,4 +52,20 @@ with open ("Pract.txt","r") as f:
     print(new_data)
 with open ("Pract.txt","w") as f:
      f.write(new_data)
+
+
+#for counting how many even no in our saved file of numbers
+
+count = 0
+with open("pract.txt","r") as f:
+    data = f.read()
+
+    nums= data.split(",")
+    for val in nums:
+        if(int(val)%2==0):
+            count+=1
+print(count)
+
+
+     
 
