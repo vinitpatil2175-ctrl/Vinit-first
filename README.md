@@ -79,8 +79,37 @@ class students:
             sum += val
         print("hi",self.name,"your avg score:",sum/3)
 s1 = students("Tony",[99,98,97])            
-s1.get_avg()     
+s1.get_avg() 
 
+
+
+#GAMES :GUESS THE RANDOM NUMBER
+import random
+target =random.randint(1,100)
+
+while True:
+    userchoice = int(input("Enter your guess:"))
+    if (userchoice == target):
+        print("You won")
+        break
+    elif (userchoice < target):
+        print("No take bigger guess")
+    else:
+        print("No take smaller guess")   
+print("Game Over")     
+
+
+# Password generator
+import random
+import string
+
+password_length = int(input("Enter the desired password length: "))
+charValue = string.ascii_letters + string.digits + string.punctuation
+password = ""
+
+for i in range(password_length):
+    password += random.choice(charValue)
+print("Your random Pass:",password)
 
 #for circle class calc area ani circumference or peimeter of circle by radius
 class circle:
