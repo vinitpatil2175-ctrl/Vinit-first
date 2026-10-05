@@ -81,3 +81,19 @@ class students:
 s1 = students("Tony",[99,98,97])            
 s1.get_avg()     
 
+
+#for circle class calc area ani circumference or peimeter of circle by radius
+class circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        area = 3.14 * (self.radius ** 2)
+        return area
+    def perimeter(self):
+        perimeter = 2 * 3.14 * self.radius
+        return perimeter
+radius = float(input("Enter the radius of the circle: "))    
+c1 = circle(radius)
+print(c1.area())
+print(c1.perimeter())   
