@@ -14,6 +14,9 @@ def sum(n):
 print(sum(5)) 
 
 
+
+
+
 #recusive function to print all ele of list
 
 def print_list(list,idx=0):
@@ -126,3 +129,7 @@ radius = float(input("Enter the radius of the circle: "))
 c1 = circle(radius)
 print(c1.area())
 print(c1.perimeter())   
+
+
+
+# this is the repo
