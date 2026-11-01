@@ -1,35 +1,46 @@
-#Rock Paper Scissor Game
-import random
-item_list=["Rock","Scissor","Paper"]
-user_choice = input("Enter your choice: ")
-comp_choice=random.choice(item_list)
-print(f"Use Choice={user_choice} , Computer Choice={comp_choice}")
-if (user_choice==comp_choice):
-    print("Math Tie")
-elif (user_choice == "Rock"):
-    if(comp_choice=="Paper"):
-        print("Paper covers,COMP WINS!!")
-    else:
-        print("Rock smashed Scissor,YOU WON!!")
-elif(user_choice=="Paper"):
-    if(comp_choice=="Scissor"):
-        print("Scissor cuts Paper,COMP WINS!!") 
-    else:
-        print("Paper covers Rock,YOU WON!!")
-elif(user_choice=="Scissor"): 
-    if(comp_choice=="Rock"):
-        print("ROck smashed Scissor,COMP WINS!!")   
-    else:
-        print("Scissor cuts Paper,YOU WON!!")
+import tkinter as tk
+from tkinter import messagebox
 
+def check_winner():
+    global winner
+    for combo in [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]:
+        if buttons[combo[0]]["text"] == buttons[combo[1]]["text"] == buttons[combo[2]]["text"] != "":
+            buttons[combo[0]].config(bg="green")
+            buttons[combo[1]].config(bg="green")
+            buttons[combo[2]].config(bg="green")
+            winner = True
+            messagebox.showinfo("Tic-Tac-Toe", f"Player {buttons[combo[0]]['text']} wins!")
+            root.destroy()
+            return
 
-  
-  
+def button_click(index):
+    if buttons[index]["text"] == "" and not winner:
+        buttons[index]["text"] = current_player
+        check_winner()
+        if not winner:
+            toggle_player()
 
+def toggle_player():
+    global current_player
+    current_player = "X" if current_player == "O" else "O"
+    label.config(text=f"Player {current_player}'s turn")
 
+root = tk.Tk()
+root.title("Tic-Tac-Toe")
 
+# Bind i=i to capture the loop variable correctly
+buttons = [tk.Button(root, text="", font=("normal", 25), width=6, height=2, 
+                     command=lambda i=i: button_click(i)) for i in range(9)]
 
+for i, button in enumerate(buttons):
+    button.grid(row=i//3, column=i%3)
 
+current_player = "X"
+winner = False    
+label = tk.Label(root, text=f"Player {current_player}'s turn", font=("normal", 16))
+label.grid(row=3, column=0, columnspan=3)
+
+root.mainloop()
 
 
 
