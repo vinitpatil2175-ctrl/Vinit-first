@@ -82,6 +82,28 @@ print("Per Person Contri:",Amount_to_pay)
 
 
 
+##Digital Clock
+import tkinter as tk
+from time import strftime
+
+root = tk.Tk()
+root.title("Digital Clock")
+    
+label = tk.Label(root,font=('calibri',60,'bold'),background='green',foreground='black')
+label.pack(anchor='center')
+
+def time():
+    string = strftime( '%I:%M:%S  %p \n %D') #for 12hr clock use %I else for 24hr clock you need to use %H
+    label.config(text=string)
+    label.after(1000,time)
+   
+
+time()
+
+root.mainloop()
+
+
+
 
 
 
