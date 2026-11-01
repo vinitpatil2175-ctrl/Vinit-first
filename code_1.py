@@ -1,4 +1,4 @@
-# X & O Tic-Tac-Toe game
+## X & O Tic-Tac-Toe game
 import tkinter as tk
 from tkinter import messagebox
 
@@ -43,6 +43,42 @@ label.grid(row=3, column=0, columnspan=3)
 
 root.mainloop()
 
+
+##Rock Paper Scissor Game
+import random
+item_list=["Rock","Scissor","Paper"]
+user_choice = input("Enter your choice: ")
+comp_choice=random.choice(item_list)
+print(f"Use Choice={user_choice} , Computer Choice={comp_choice}")
+if (user_choice==comp_choice):
+    print("Math Tie")
+elif (user_choice == "Rock"):
+    if(comp_choice=="Paper"):
+        print("Paper covers,COMP WINS!!")
+    else:
+        print("Rock smashed Scissor,YOU WON!!")
+elif(user_choice=="Paper"):
+    if(comp_choice=="Scissor"):
+        print("Scissor cuts Paper,COMP WINS!!") 
+    else:
+        print("Paper covers Rock,YOU WON!!")
+elif(user_choice=="Scissor"): 
+    if(comp_choice=="Rock"):
+        print("ROck smashed Scissor,COMP WINS!!")   
+    else:
+        print("Scissor cuts Paper,YOU WON!!")
+
+
+##Contri per person calculator
+rent =int(input("Enter your Rent:"))
+food =int(input("\nEnter your Food Expenses:"))
+extra=int(input("Enter your Extra expenses:"))
+electricity_units =int(input("Enter units of Elec.used:"))
+charge_per_unit=int(input("Enter charge of 1 unit Elec.in your Area:"))
+electricity_bill = electricity_units*charge_per_unit
+persons = int(input("No.of people living on room:"))
+Amount_to_pay= (rent+food+extra+electricity_bill)//persons
+print("Per Person Contri:",Amount_to_pay)
 
 
 
