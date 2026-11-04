@@ -141,6 +141,31 @@ text.pack(expand=tk.YES,fill =tk.BOTH)
 root.mainloop()
 
 
+##QR code maker
+import qrcode
+
+#input upi id
+upi_id = input("Enter your UPI ID :")
+
+#defining payment url
+phonepe_url = f'upi://pay?pa={upi_id}&pn=Recipient%20Name&mc=1234'
+paytm_url= f'upi://pay?pa={upi_id}&pn=Recipient%20Name&mc=1234'
+googlepay_url = f'upi://pay?pa={upi_id}&pn=Recipient%20Name&mc=1234'
+
+#creating Qrcodes
+phonepe_qr = qrcode.make(phonepe_url)
+paytm_qr = qrcode.make(paytm_url)
+googlepay_qr = qrcode.make(googlepay_url)
+
+#Save qr
+phonepe_qr.save('phonepe_qr.png')
+paytm_qr.save('paytm_qr.png')
+googlepay_qr.save('googlepay_qr.png')
+
+#display qr codes (pillow)
+phonepe_qr.show()
+paytm_qr.show()
+googlepay_qr.show()
 
 
 
