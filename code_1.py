@@ -44,6 +44,11 @@ label.grid(row=3, column=0, columnspan=3)
 root.mainloop()
 
 
+
+
+
+
+
 ##Rock Paper Scissor Game
 import random
 item_list=["Rock","Scissor","Paper"]
@@ -69,6 +74,10 @@ elif(user_choice=="Scissor"):
         print("Scissor cuts Paper,YOU WON!!")
 
 
+
+
+
+
 ##Contri per person calculator
 rent =int(input("Enter your Rent:"))
 food =int(input("\nEnter your Food Expenses:"))
@@ -79,6 +88,10 @@ electricity_bill = electricity_units*charge_per_unit
 persons = int(input("No.of people living on room:"))
 Amount_to_pay= (rent+food+extra+electricity_bill)//persons
 print("Per Person Contri:",Amount_to_pay)
+
+
+
+
 
 
 
@@ -99,6 +112,10 @@ def time():
 
 time()
 root.mainloop()
+
+
+
+
 
 
 
@@ -141,6 +158,10 @@ text.pack(expand=tk.YES,fill =tk.BOTH)
 root.mainloop()
 
 
+
+
+
+
 ##QR code maker
 import qrcode
 
@@ -168,6 +189,18 @@ paytm_qr.show()
 googlepay_qr.show()
 
 
+
+
+
+
+##Print all factors of a number
+num=int(input("num=?"))
+result= []
+for i in range(1,num+1):  #num=5
+    if num%i==0:
+        result.append(i)
+
+print(result)        
 
 
 
